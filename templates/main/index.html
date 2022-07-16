@@ -1,0 +1,65 @@
+
+{% extends 'mainsite.html' %}
+
+
+
+{% block title %}
+  Main Page
+{% endblock %}
+  
+
+
+{% block mainTemplate %}
+  
+
+
+
+<header class="container-fluid">
+        <h1 class="justify-content-end">Hello ,Welcome to my practice site</h1>
+        <h2 class="justify-content-end text-info">This is my django parctice and it doesn't follow any purpose.</h2>
+        <h3 class="justify-content-end text-danger">i'm using <strong>Bootstrap5</strong> too,by doing this i'm shoting 2 goals with one arrow ha ha ha i'm very funny ...</h3>
+</header>
+
+<br/>
+
+
+    <div class="div2 container-fluid">
+        <div class="row">
+
+
+          
+            <div class=col>
+              <div class="card" style="width: 18rem;">
+                <img src="{{media_url }}images/index/django-templates.webp" class="card-img-top" alt="pictures">
+                <div class="card-body">
+                  <h5 class="card-title">Django Templates</h5>
+                  <p class="card-text">This part is going to show you Templates how to works.</p>
+                  <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                      Parts
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                      <li><a class="dropdown-item" href="/ifcondition/" target="_blank">if condition</a></li>
+                      <li><a class="dropdown-item" href="/forcondition/" target="_blank">for condition</a></li>
+                      <li><a class="dropdown-item" href="/autoescape/" target="_blank">autoescape</a></li>
+                      <li><a class="dropdown-item" href="{% url 'date' %}" target="_blank">client DATETIME</a></li>
+                      <li><a class="dropdown-item" href="{% url 'tagfilters' %}" target="_blank">Tag Filters</a></li>
+                      <li><a class="dropdown-item" href="{% url 'photo' %}" target="_blank">media access</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+        </div>
+    </div>
+    
+    <br/>
+
+{% endblock  %}
+
+
+
+
+

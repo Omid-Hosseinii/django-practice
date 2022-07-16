@@ -1,0 +1,14 @@
+
+.div1{
+    background-color: yellow;
+    border: 1px solid black;
+    height: 200px;
+    
+}
+.div2{
+    background-color: yellow;
+    border: 1px solid black;
+
+    font-size:20px;
+    padding-top:5px;
+}

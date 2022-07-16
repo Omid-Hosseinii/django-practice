@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for condition</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+</head>
+<body>
+        <div class="container">
+            <h1>This is step2 action</h1>
+            <h2>We are going to show how work Template language : for condition</h2>
+            <ul>
+                <li>{{ name }}</li>
+                <li>{{ age }}</li>
+            </ul>
+
+            <div>
+                
+                {% for name in names %}
+                <ul>
+                    <li>{{ name }}</li>
+                </ul>
+                {% empty %}
+                    <h2 class="text-danger">This List is empty</h2>
+                    
+                {% endfor %}
+                    
+            </div>
+
+            <div>
+                <h4><b>RANGE</b></h4>
+                
+                {% for i in range %}
+
+                    <div>hello_{{i}}</div>
+                    
+                {% endfor %}
+                
+                <h4>part2</h4>
+                
+                {% for i in range %}
+
+                    <div>hello_{{forloop.last}}</div>     <!--  forloop.counter     forloop.first -->
+                    
+                {% endfor %}
+
+
+
+                <h4><b>Table</b></h4>
+                
+                    <table border='1'>
+                        
+                        {% for i in row %}
+                            <tr >
+                                
+                                {% for j in col %}
+                                    <td>
+                                        Omid
+                                    </td>
+                                    
+                                {% endfor %}
+                                    
+                            </tr>                           
+                        {% endfor %}
+                            
+
+
+
+                    </table>
+
+
+
+            </div>
+
+
+        </div>
+
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>client date and time</title>
+</head>
+<body>
+    <div>
+        <h2>This is serverSide Date and Time:</h2>
+        <h4>{{serverside_date}}</h4>
+    </div>
+
+    <div>
+        <h2>This is clientSide Date and Time:</h2>
+        {% now 'DATE_FORMAT' %}<br/>
+        {% now 'DATETIME_FORMAT' %}<br/>
+        {% now 'SHORT_DATE_FORMAT' %}<br/>
+        {% now 'SHORT_DATETIME_FORMAT' %}<br/>
+        {% now 'Y-m-d H:i' %}
+    </div>
+
+
+</body>
+</html>
