@@ -25,31 +25,74 @@
 
     <div class="div2 container-fluid">
         <div class="row">
-
-
           
+          
+          
+          <!---------------------------------------------------------------------------------------------------------------- -->
+            <!-- Template Section card -->
+          <div class="row row-cols-1 row-cols-md-3 g-4">
             <div class=col>
-              <div class="card" style="width: 18rem;">
-                <img src="{{media_url }}images/index/django-templates.webp" class="card-img-top" alt="pictures">
-                <div class="card-body">
-                  <h5 class="card-title">Django Templates</h5>
-                  <p class="card-text">This part is going to show you Templates how to works.</p>
-                  <div class="dropdown">
-                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                      Parts
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                      <li><a class="dropdown-item" href="/ifcondition/" target="_blank">if condition</a></li>
-                      <li><a class="dropdown-item" href="/forcondition/" target="_blank">for condition</a></li>
-                      <li><a class="dropdown-item" href="/autoescape/" target="_blank">autoescape</a></li>
-                      <li><a class="dropdown-item" href="{% url 'date' %}" target="_blank">client DATETIME</a></li>
-                      <li><a class="dropdown-item" href="{% url 'tagfilters' %}" target="_blank">Tag Filters</a></li>
-                      <li><a class="dropdown-item" href="{% url 'photo' %}" target="_blank">media access</a></li>
-                    </ul>
+                <div class="card" style="width: 18rem;">
+                  <img src="{{media_url }}images/index/django-templates.webp" class="card-img-top" alt="pictures">
+                  <div class="card-body">
+                    <h5 class="card-title">Django Templates</h5>
+                    <p class="card-text">This part is going to show you Templates how to works.</p>
+                    <div class="dropdown">
+                      <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        Parts
+                      </button>
+                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="{% url 'if' %}" target="_blank">if condition</a></li>
+                        <li><a class="dropdown-item" href="{% url 'for' %}" target="_blank">for condition</a></li>
+                        <li><a class="dropdown-item" href="{% url 'autoescape' %}" target="_blank">autoescape</a></li>
+                        <li><a class="dropdown-item" href="{% url 'date' %}" target="_blank">client DATETIME</a></li>
+                        <li><a class="dropdown-item" href="{% url 'tagfilters' %}" target="_blank">Tag Filters</a></li>
+                        <li><a class="dropdown-item" href="{% url 'photo' %}" target="_blank">media access</a></li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+              <!---------------------------------------------------------------------------------------------------------------- -->
+              <div class=col>
+                <div class="card" style="width: 18rem;">
+                  <img src="{{media_url }}images/index/django-models.jpg" class="card-img-top" alt="pictures">
+                  <div class="card-body">
+                    <h5 class="card-title">Django Models</h5>
+                    <p class="card-text">This part is going to show you Database how to works.</p>
+                    <div class="dropdown">
+                      <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        Parts
+                      </button>
+                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="{% url 'blogs' %}" target="_blank">blog with database</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!---------------------------------------------------------------------------------------------------------------- -->
+              <!-- <div class=col>
+                <div class="card" style="width: 18rem;">
+                  <img src="{{media_url }}images/index/django-models.jpg" class="card-img-top" alt="pictures">
+                  <div class="card-body">
+                    <h5 class="card-title">Django Models</h5>
+                    <p class="card-text">This part is going to show you Database how to works.</p>
+                    <div class="dropdown">
+                      <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        Parts
+                      </button>
+                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="{% url 'blogs' %}" target="_blank">blog with database</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+              <!---------------------------------------------------------------------------------------------------------------- -->
+
+
+          </div>
 
 
         </div>

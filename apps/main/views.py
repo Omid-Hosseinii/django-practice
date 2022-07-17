@@ -66,7 +66,7 @@ def media_images(request):
     imageList=os.listdir(settings.MEDIA_ROOT+'/images/laptops')
     context={
         "media_url":settings.MEDIA_URL,
-        "imageList":imageList
+        "imageList":imageList   
     }
     return render(request,'main/photo.html',context)
 

@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'apps',
+    'apps.blog.apps.BlogConfig',
+    'apps.product.apps.ProductConfig'
 ]
 
 MIDDLEWARE = [
@@ -78,7 +80,7 @@ WSGI_APPLICATION = 'example1.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'mysql.connector.django',
-        'NAME': 'Djangoexample',
+        'NAME': 'django_practice',
         'USER':'root',
         'PASSWORD':'OmId57311',
         'HOST':'localhost',

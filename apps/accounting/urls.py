@@ -3,7 +3,7 @@ import apps.accounting.views as views
 
 urlpatterns=[
     
-    path('login/',views.login)
+    path('login/',views.login,name='login'),
 
 
 ]
