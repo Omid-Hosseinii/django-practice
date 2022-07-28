@@ -19,8 +19,14 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
+    path('', include('apps.main.urls')),
     path('admin/', admin.site.urls),
     path('blog/', include('apps.blog.urls')),
     path('accounting/', include('apps.accounting.urls')),
-    path('', include('apps.main.urls'))
+    path('product/', include('apps.product.urls'))
+    
 ]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+
+
+admin.site.site_header='پنل مدیریت فروشگاه'
+admin.site.index_title='به پنل مدیریت خوش آمدید'

@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,14 +7,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>authors</title>
+    <link rel="stylesheet" href="{% static '/css/bootstrap.min.css' %}">
+    <script src="{% static '/js/bootstrap.bundle.min.js' %}"></script>
 </head>
 <body>
     
 
-    {% for author in authors %}
-        
-    <h3>{{author.name}}-{{author.family}}-{{author.age}}</h3>
+    <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th scope="col">id</th>
+            <th scope="col">name</th>
+            <th scope="col">family</th>
+            <th scope="col">age</th>
+            <th scope="col">
+              
+            </th>
+          </tr>
+        </thead>
 
-{% endfor %}
+        <tbody>
+                {% for author in authors %}
+                    <tr>
+                        <th scope="row">{{author.id}}</th>
+                        <td>{{author.name}}</td>
+                        <td>{{author.family}}</td>
+                        <td>{{author.age}}</td>
+                        <td>
+                          <a href="author/{{author.id}}" target="_blank">detail</a>
+                        </td>
+                    </tr>
+                {% endfor %}    
+        </tbody>
+      </table>
+
 </body>
 </html>

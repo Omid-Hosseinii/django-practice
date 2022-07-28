@@ -4,8 +4,12 @@ from django.db import models
 
 
 class Product(models.Model):
-    productname= models.CharField(max_length=50)
-    productprice= models.IntegerField(default=0)
+    type= models.CharField(max_length=50)
+    name= models.CharField(max_length=50)
+    price= models.IntegerField(default=0)
+    description= models.TextField(max_length=500,null=True, blank=True)
+    picaddress= models.CharField(max_length=200,null=True, blank=True)
+    
     
     def __str__(self):
-        return f"{self.productname}\t{self.productprice}"
+        return f"{self.name}\t{self.price}\t{self.description}\t{self.type}"
