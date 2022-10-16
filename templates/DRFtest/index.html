@@ -1,0 +1,104 @@
+{% extends 'mainsite.html' %}
+
+{% block title %}
+    page | ajax test
+{% endblock title %}
+
+
+{% block mainTemplate %}
+
+    <h1 class="text-info m-auto mt-3">this is DRF page for test in django</h1>
+    <div class="container">
+        <table class="table table-success table-striped">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">title</th>
+                <th scope="col">api link</th>
+                <th scope="col">method</th>
+              </tr>
+            </thead>
+            <tbody>
+
+              <tr>
+                <th scope="row">1</th>
+                <td>simple function api test</td>
+                <td><a href="{% url 'apitest1' %}" target="_blank">http://127.0.0.1:8000/DRFtest/apitest1</a></td>
+                <td>[GET,POST]</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>simple class api test</td>
+                <td><a href="{% url 'apitest2' %}" target="_blank">http://127.0.0.1:8000/DRFtest/apitest2</a></td>
+                <td>GET</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>simple class api with parameters test</td>
+                <td><a href="apitest3/omid/hosseini/26" target="_blank">http://127.0.0.1:8000/DRFtest/apitest3/omid/hosseini/26</a></td>
+                <td>GET</td>
+              </tr>
+              <tr>
+                <th scope="row">4</th>
+                <td>class api with database model test</td>
+                <td><a href="{% url 'apitest5' %}" target="_blank">http://127.0.0.1:8000/DRFtest/apitest5</a></td>
+                <td>GET</td>
+              </tr>
+              <tr>
+                <th scope="row">5</th>
+                <td>class api with search one record from model test</td>
+                <td><a href="apitest6/2" target="_blank">http://127.0.0.1:8000/DRFtest/apitest6/2</a></td>
+                <td>GET</td>
+              </tr>
+              <tr>
+                <th scope="row">6</th>
+                <td>class api with add one record into database with querystring test</td>
+                <td><a href="#" target="_blank">http://127.0.0.1:8000/DRFtest/apitest7</a></td>
+                <td>POST</td>
+              </tr>
+              <tr>
+                <th scope="row">7</th>
+                <td>class api with another way serializers class (class Meta)</td>
+                <td><a href="{% url 'apitest8' %}" target="_blank">http://127.0.0.1:8000/DRFtest/apitest8</a></td>
+                <td>GET</td>
+              </tr>
+              <tr>
+                <th scope="row">8</th>
+                <td>class api product add with image</td>
+                <td><a href="#" target="_blank">http://127.0.0.1:8000/DRFtest/apitest9</a></td>
+                <td>POST</td>
+              </tr>
+              <tr>
+                <th scope="row">9</th>
+                <td>class api add person into database another way</td>
+                <td><a href="#" target="_blank">http://127.0.0.1:8000/DRFtest/apitest10</a></td>
+                <td>POST</td>
+              </tr>
+              <tr>
+                <th scope="row">10</th>
+                <td>Create token for users with this url give username and password</td>
+                <td><a href="#" target="_blank">http://127.0.0.1:8000/DRFtest/apitokenbyuser</a></td>
+                <td>POST</td>
+              </tr>
+              <tr>
+              <tr>
+                <th scope="row">11</th>
+                <td>Create token for all users with this url</td>
+                <td><a href="http://127.0.0.1:8000/DRFtest/createtokenalluser" target="_blank">http://127.0.0.1:8000/DRFtest/createtokenalluser</a></td>
+                <td>GET</td>
+              </tr>
+              <tr>
+                <th scope="row">12</th>
+                <td>product api with custom permissions</td>
+                <td><a href="http://127.0.0.1:8000/DRFtest/productshow" target="_blank">http://127.0.0.1:8000/DRFtest/productshow</a></td>
+                <td>GET</td>
+              </tr>
+
+
+
+            </tbody>
+          </table>
+    </div>
+                
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'mainsite.html' %}
+
+{% block title %}
+    page | redirect test
+{% endblock title %}
+
+
+{% block mainTemplate %}
+
+        <h1 class="text-info m-auto fw-bolder mt-0">redirect page</h1>
+        <div class="container">
+            <ul>
+                <li><a href="{% url 'r2' %}">HttpResponseRedirect</a></li>
+                <li><a href="#">HttpResponsePermanentRedirect</a></li>
+                <li><a href="#">HttpResponseNotFound</a></li>
+                <li><a href="#">HttpResponseBadRequest</a></li>
+                <li><a href="#">HttpResponseForbidden</a></li>
+                <li><a href="#">HttpResponseServerError</a></a></li>
+            </ul>
+        </div>
+
+
+
+{% endblock %}
+    
+

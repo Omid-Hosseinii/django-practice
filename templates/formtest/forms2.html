@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        
+        {% block title %}
+            django | Forms part1
+        {% endblock %}
+            
+    </title>
+    <link rel="stylesheet" href="{% static '/css/bootstrap.min.css' %}">
+    <script src="{% static '/js/bootstrap.bundle.min.js' %}"></script>
+</head>
+<body>
+ 
+    <div class="m-2">
+
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <br/>
+            <hr/>
+            {{ form.as_p }}
+            <br/>
+            <hr/>
+            <ul>
+                
+                {{ form.as_ul }}
+                <li>
+                    <input type="submit" value="Register">
+                </li>
+            </ul>
+            <br/>
+            <hr/>
+            <table>
+                
+                {{ form.as_table }}
+                <td colspan="2">
+                    
+                    <input type="submit" value="Register">
+                </td>
+            </table>
+            <br/>
+            <hr/>
+            <div>
+                <label for="id_name">name :</label>
+                {{ form.name }}
+            </div>
+            <div>
+                <label for="id_family">family :</label>
+                {{ form.family }}
+            </div>
+            
+
+    
+        </form>
+        
+    </div>
+
+
+</body>
+</html>

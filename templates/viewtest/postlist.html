@@ -1,0 +1,46 @@
+{% extends 'mainsite.html' %}
+
+
+{% block mainTemplate %}
+
+
+<div class="container mt-5">
+    <h1>این لست جدید است</h1>
+    <!-- <h2>{{name1}}</h2> -->
+    <a class="d-flex flex-column btn btn-success" href="{% url 'view1' %}" target="_blank">create Post</a>
+    <table class="table table-striped table-bordered table-hover table_width60">
+        <tr>
+            <th>id</th>
+            <th>title</th>
+            <th>description</th>
+            <th>status</th>
+            <th></th>
+        </tr>
+        {% for post in posts %}
+        <tr>
+            <td>{{post.id}}</td>
+            <td>{{post.name}}</td>
+            <td class="text-right">{{post.description}}</td>
+            <td>{{post.is_active}}</td>
+            <td>
+                <a class="btn btn-primary" href="{% url 'view3' post.id %}" target="_blank">detail</a>
+                <a class="btn btn-danger" href="{% url 'delete' post.id %}" target="_blank">delete</a>
+                <a class="btn btn-warning" href="{% url 'update' post.id %}" target="_blank">edit</a>
+            </td>
+        </tr>
+            {% endfor %}
+    </table>
+
+        
+        
+</div>
+
+
+
+
+
+
+
+
+
+{% endblock %}

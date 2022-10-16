@@ -1,0 +1,25 @@
+{% extends 'mainsite.html' %}
+
+
+{% block title %}
+    blog page
+{% endblock %}
+    
+
+{% block mainTemplate %}
+
+
+{% if message %}
+
+    <h1 class="text-info m-auto mt-3">{{message}}</h1>
+
+{% else %}
+
+    <h1 class="text-info m-auto mt-3">بلاگ شما با موفقیت ثبت شد</h1>
+    
+{% endif %}
+    
+        
+    
+{% endblock %}
+    

@@ -1,0 +1,17 @@
+{% extends 'mainsite.html' %}
+
+{% block title %}
+    page | url test
+{% endblock title %}
+
+
+{% block mainTemplate %}
+
+    <h1 class="text-info m-auto mt-3">this is cookies page for test in django</h1> 
+    <div class="container">
+        <a href="{% url 'setcookie' %}" target="_blank">set cookie</a><br/>
+        <a href="{% url 'getcookie' %}" target="_blank">get cookie</a>
+
+    </div>
+
+{% endblock %}

@@ -12,11 +12,11 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'login' %}" target="_blank">login</a>
           </li>
-          <li class="nav-item dropdown">
+          <li class="nav-item dropdown h0mouse">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Reference
             </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <ul class="dropdown-menu hmouse" aria-labelledby="navbarDropdown">
               <li><a class="dropdown-item" href="https://getbootstrap.com/" target="_blank">bootstrap website</a></li>
               <li><a class="dropdown-item" href="https://getbootstrap.com/docs/5.2/getting-started/introduction/" target="_blank">bootstrap documentation</a></li>
               <li><hr class="dropdown-divider"></li>
@@ -25,6 +25,12 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="admin" target="_blank">admin</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="test" target="_blank">Test HTML</a>
+          </li>
+          <li class="nav-item mx-4 ">
+            <div class="nav-link text-black" href="">dear <span class="text-success">{{ request.session.user_name }}</span> welcome to site.</div>
           </li>
         </ul>
         <form class="d-flex" role="search">

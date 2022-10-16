@@ -1,0 +1,55 @@
+{% extends 'mainsite.html' %}
+
+{% block title %}
+    page | ajax test
+{% endblock title %}
+
+
+{% block mainTemplate %}
+
+    <h1 class="text-info m-auto mt-3">this is ajax posts page for test in django</h1>
+    <div class="container" dir="rtl">
+        
+        {% for post in posts %}
+            <h1>{{post.title}}</h1>
+            <p>{{post.caption}}</p> 
+            <!-- <a class="like_btn btn btn-primary" id="btnlike{{post.id}}" data-catid="{{post.id}}">لایک</a> -->
+            
+
+            <button type="button" class="like_btn btn btn-primary" id="btnlike{{post.id}}" data-catid="{{post.id}}">
+                لایک <span class="badge bg-secondary" id="count{{post.id}}"></span>
+            </button>
+                
+            <hr>           
+        {% endfor %}
+            
+
+    </div>
+
+    <script>
+
+        $('.like_btn').click(function(){
+            var id=$(this).attr('data-catid');
+            $.ajax({
+                type:"GET",
+                url:"/ajaxtest/like",
+                data:{
+                    post_id:id
+                },
+                success:function(data){
+                    //alert(data);
+                    if($('#count'+id).length){
+                        $('#count'+id).empty();
+                        $('#count'+id).append(data);
+                    }else{
+                        $('#count'+id).append(data);
+                    }
+                    $('#btnlike'+id).removeClass('btn-primary');
+                    $('#btnlike'+id).addClass('btn-success');
+                }
+            });
+        });
+    </script>
+                
+
+{% endblock %}

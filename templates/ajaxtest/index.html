@@ -1,0 +1,20 @@
+{% extends 'mainsite.html' %}
+
+{% block title %}
+    page | ajax test
+{% endblock title %}
+
+
+{% block mainTemplate %}
+
+    <h1 class="text-info m-auto mt-3">this is ajax page for test in django</h1>
+    <div class="container">
+        <a href="{% url 'postajax' %}" target="_blank">posts</a><br/>
+        <a href="{% url 'contactajax' %}" target="_blank">contacts form post with ajax</a><br/>
+        <!-- <a href="{% url 'getsession' %}" target="_blank">get session</a><br/>
+        <a href="{% url 'delsession' %}" target="_blank">del session</a> -->
+
+    </div>
+                
+
+{% endblock %}

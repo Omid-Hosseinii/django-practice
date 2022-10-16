@@ -1,0 +1,24 @@
+{% extends 'mainsite.html' %}
+
+{% block title %}
+    page | url test
+{% endblock title %}
+
+
+{% block mainTemplate %}
+
+    <h1 class="text-info m-auto mt-3">this is page 1 for redirect test django</h1>
+    {{fname}}        
+            {% if post %}
+                <h3>{{post}}</h3>
+            {% endif %}
+
+
+    {% if fname %}
+        <h3>{{fname}}</h3>
+    {% endif %}
+                
+
+{% endblock %}
+    
+

@@ -9,6 +9,8 @@ urlpatterns=[
     path('autoescape/',views.autoescape,name='autoescape'),
     path('datetime/',views.date_time,name='date'),
     path('tag/',views.tag_Filters,name='tagfilters'),
-    path('photoes/',views.media_images,name='photo')
+    path('test/',views.testhtml,name='test'),
+    path('photoes/',views.media_images,name='photo'),
+    path('downloadpdf/',views.download_path,name='downloadmainpdf'),
 
 ]

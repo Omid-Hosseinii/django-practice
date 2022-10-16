@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Author, ChiefEditor,Publication,Article
+from .models import Author, ChiefEditor,Publication,Article,articleimg
 # Register your models here.
 
 @admin.register(Author)
@@ -26,3 +26,9 @@ class ArticleAdmin(admin.ModelAdmin):
     list_display = ("article_title","published_at","is_active","status","author")
 
 # admin.site.register(Author,BlogAdmin)
+
+
+
+@admin.register(articleimg)
+class articleimgAdmin(admin.ModelAdmin):
+    list_display = ("title","text","is_active","main_img")

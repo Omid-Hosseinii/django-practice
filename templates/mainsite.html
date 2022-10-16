@@ -12,8 +12,24 @@
         {% endblock %}
             
     </title>
+
+    <!-- bootstrap 5 -->
     <link rel="stylesheet" href="{% static '/css/bootstrap.min.css' %}">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="{% static '/js/bootstrap.bundle.min.js' %}"></script>
+
+
+    <!-- bootstrap 4 -->
+    <!-- <link rel="stylesheet" href="{% static '/css/bootstrap-rtl.min' %}">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script> -->
+
+
+
+    <!-- my style css and js  -->
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+    <script src="{% static '/js/myjs.js' %}"></script>
 
     <style>
       body{
@@ -21,6 +37,14 @@
         display: flex;
         flex-direction: column;
       }
+
+    .h0mouse:hover .hmouse{
+        display: block;
+    }
+    .hmouse{
+        margin-top: 0;
+    }
+    
     </style>
 
 

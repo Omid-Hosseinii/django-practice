@@ -1,0 +1,40 @@
+{% extends 'mainsite.html' %}
+
+{% block title %}
+    page | ajax test
+{% endblock title %}
+
+
+{% block mainTemplate %}
+
+    <h1 class="text-info m-auto mt-3">this is ajax contact page for test in django</h1>
+    <div class="container" dir="rtl">
+        <form method="post" id="contactform">
+            {% csrf_token %}
+                {{ form.as_table }}
+            <input type="submit" value="ثبت پیام">
+            
+        </form>
+
+        <script type="text/javascript">
+            $(document).ready(function(){
+               // alert($(this).serialize());
+               $('#contactform').submit(function(){
+                $.ajax({
+                    type: "POST",
+                    url:"{% url 'contactajax' %}",
+                    data:$(this).serialize(),
+                    success:function(data){
+                        //alert("نتنتت"+data.name);
+                        alert(' کاربر'+data.name+'پیام شما دریافت شد ');
+                    },
+                });
+                return false;  
+               });
+            });
+        </script>
+            
+    </div>
+                
+
+{% endblock %}

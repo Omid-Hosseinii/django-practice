@@ -1,0 +1,19 @@
+{% extends 'mainsite.html' %}
+
+{% block title %}
+    page | url test
+{% endblock title %}
+
+
+{% block mainTemplate %}
+
+    <h1 class="text-info m-auto mt-3">this is sessions page for test in django</h1>
+    <div class="container">
+        <a href="{% url 'setsession' %}" target="_blank">set session</a><br/>
+        <a href="{% url 'getsession' %}" target="_blank">get session</a><br/>
+        <a href="{% url 'delsession' %}" target="_blank">del session</a>
+
+    </div>
+                
+
+{% endblock %}

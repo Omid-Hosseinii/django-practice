@@ -1,0 +1,30 @@
+{% extends 'mainsite.html' %}
+
+
+{% block mainTemplate %}
+
+
+
+
+    <div dir="rtl" class="container">
+         
+        
+        {% for post in posts %}
+            <h1>{{post.name}}</h1>
+            <p>{{post.description}}</p>
+            
+        {% endfor %}
+            
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+{% endblock  %}

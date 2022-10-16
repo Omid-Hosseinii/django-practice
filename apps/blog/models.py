@@ -4,7 +4,7 @@ from django.utils import timezone
 
 # Create your models here.
 from django.db import models
-from kiwisolver import Constraint
+
 
 
 
@@ -72,3 +72,17 @@ class Article(models.Model):
         verbose_name_plural='مقالات' 
         db_table = 'T_Article'  
         ordering=['article_title','is_active']   
+        
+        
+        
+        
+class articleimg(models.Model):
+    title=models.CharField(max_length=200, verbose_name='عنوان')
+    text=models.TextField(verbose_name='متن اصلی')
+    is_active=models.BooleanField(default=False,verbose_name='فعال')
+    main_img=models.ImageField(verbose_name='عکس اصلی')
+    class Meta:
+        verbose_name ='مقاله'
+        verbose_name_plural='عکس مقالات' 
+        db_table = 'T_articleimg'  
+        ordering=['title','is_active']      

@@ -2,15 +2,21 @@ from django.shortcuts import render
 from datetime import time,datetime
 from django.conf import settings
 import os
+from django.contrib.auth.models import User
+from django.http import HttpResponse
+from django.core.files.storage import FileSystemStorage
+from django.http import HttpResponseNotFound
 # Create your views here.
 
-
+def media_admin(request):
+    return { "media_url":settings.MEDIA_URL }
 
 def index(request):
-    context={
-        "media_url":settings.MEDIA_URL
-    }
-    return render(request,'main/index.html',context)
+    username='مهمان'
+    if request.user.is_authenticated:
+        username = request.user.username
+    request.session['user_name'] = username    
+    return render(request,'main/index.html')
 
 
 def if_condition(request):
@@ -61,18 +67,32 @@ def tag_Filters(request):
     }
     return render(request,'main/tagfilter.html',context)
 
+def testhtml(request):
+
+    return render(request,'main/testhtml.html')
+
 
 def media_images(request):
     imageList=os.listdir(settings.MEDIA_ROOT+'/images/laptops')
     context={
-        "media_url":settings.MEDIA_URL,
+        
         "imageList":imageList   
     }
     return render(request,'main/photo.html',context)
 
 
-
-
+def download_path(request):
+    fs=FileSystemStorage()
+    file_name="pdf/moama.pdf"
+    if fs.exists(file_name):
+        with fs.open(file_name) as pdf:
+            response=HttpResponse(pdf,content_type="application/pdf")
+            response['Content_Disposition']='attachment; filename=moama.pdf'
+            return response
+    else:
+        return HttpResponseNotFound("Not Found ...!")
+        
+    
 
 
 

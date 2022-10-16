@@ -40,7 +40,17 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'apps',
     'apps.blog.apps.BlogConfig',
-    'apps.product.apps.ProductConfig'
+    'apps.product.apps.ProductConfig',
+    'apps.formtest.apps.FormtestConfig',
+    'apps.viewtest.apps.ViewtestConfig',
+    'apps.urltest.apps.UrltestConfig',
+    'apps.cookietest.apps.CookietestConfig',
+    'apps.sessiontest.apps.SessiontestConfig',
+    'apps.ajaxtest.apps.AjaxtestConfig',
+    'apps.DRFtest.apps.DrftestConfig',
+    'rest_framework',
+    'rest_framework.authtoken',
+    'rest_framework_simplejwt'
 ]
 
 MIDDLEWARE = [
@@ -51,6 +61,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    
 ]
 
 ROOT_URLCONF = 'example1.urls'
@@ -66,6 +77,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'apps.main.views.media_admin'
             ],
         },
     },
@@ -117,7 +129,7 @@ TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)
@@ -133,3 +145,29 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'media/')
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST='smtp.gmail.com'
+EMAIL_USE_TLS=True
+EMAIL_PORT=587
+EMAIL_HOST_USER='omidhosseinitest01@gmail.com'
+# EMAIL_HOST_PASSWORD='OmidkhaN4426!'
+EMAIL_HOST_PASSWORD='mhnckqumlpftjxrr'
+
+
+### for authentication
+REST_FRAMEWORK = {
+    ### authentication globally
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        ### whats authentications method 
+        # 'rest_framework.authentication.BasicAuthentication',
+        # 'rest_framework.authentication.SessionAuthentication',
+        # 'rest_framework.authentication.TokenAuthentication',
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ],
+    ### globally permissions
+    # 'DEFAULT_PERMISSION_CLASSES':[
+    #     'rest_framework.permissions.IsAuthenticated'
+    # ]
+}

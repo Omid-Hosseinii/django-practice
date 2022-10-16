@@ -1,0 +1,117 @@
+{% extends 'mainsite.html' %}
+
+
+{% block mainTemplate %}
+
+
+<div class="container mt-5">
+    <a class="d-flex flex-column btn btn-success" href="{% url 'view1' %}" target="_blank">create Post</a>
+    <table class="table table-striped table-bordered table-hover table_width60">
+        <tr>
+            <th>id</th>
+            <th>title</th>
+            <th>description</th>
+            <th>status</th>
+            <th></th>
+        </tr>
+        {% for post in object_list %}
+        <tr>
+            <td>{{post.id}}</td>
+            <td>{{post.name}}</td>
+            <td class="text-right">{{post.description}}</td>
+            <td>{{post.is_active}}</td>
+            <td>
+                <a class="btn btn-primary" href="{% url 'view3' post.id %}" target="_blank">detail</a>
+                <a class="btn btn-danger" href="{% url 'delete' post.id %}" target="_blank">delete</a>
+                <a class="btn btn-warning" href="{% url 'update' post.id %}" target="_blank">edit</a>
+            </td>
+        </tr>
+            {% endfor %}
+    </table>
+
+
+
+
+
+
+    <!-- pagiination -->
+    <nav arial-label="page navigation example">
+        <ul class="pagination justify-content-center">
+
+            <!-- previous -->
+            {% if  page_obj.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.previous_page_number }}">قبلی</a>
+                </li>
+            {% else %}
+                <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1" aria-disabled="True">قبلی</a>
+                </li>    
+            {% endif %}
+            <!-- end previous -->
+
+
+            <!-- hellip -->
+            {% if page_obj.number|add:'-4' > 1 %}
+                <li class="page-item"><a class="page-link" href="?page={{ page_obj.number|add:'-5' }}">&hellip;</a></li>
+            {% endif %}
+            <!-- end hellip -->
+
+
+            <!-- pager -->
+            
+            {% for i in page_obj.paginator.page_range %}
+            {% if page_obj.number == i %}
+            <li class="page-item active" aria-current="page">
+                <span class="page-link">
+                    {{ i }}
+                    
+                </span>
+            </li>
+            {% elif i > page_obj.number|add:'-5' and i < page_obj.number|add:'5' %}
+            <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>    
+            {% endif %}    
+            {% endfor %}
+            <!-- end pager -->
+
+
+            <!-- hellip -->
+            {% if page_obj.paginator.num.pages > page_obj.number|add:'4' %}
+                <li class="page-item"><a class="page-link" href="?page={{ page_obj.number|add:'5' }}">&hellip;</a></li>
+            {% endif %}
+            <!-- end hellip -->
+
+
+            <!-- next -->
+            {% if  page_obj.has_next %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{page_obj.next_page_number}}">بعدی</a>
+                </li>
+            {% else %}
+                <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1" aria-disabled="True">بعدی</a>
+                </li>    
+            {% endif %}
+            <!-- end next -->            
+                
+                
+
+
+            
+        </ul>
+    </nav>
+    <!-- end of pagination -->
+
+        
+        
+</div>
+
+
+
+
+
+
+
+
+
+{% endblock %}
