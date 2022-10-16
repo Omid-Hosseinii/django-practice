@@ -1,0 +1,9 @@
+Transfer Mysql file to another system :
+
+1- go to mysql->mysqlserver->bin and copy django_practice.sql in database folder
+
+2-open cmd as administrator and go to mysql->mysqlserver->bin address in cmd
+
+3- write this command : mysqldump -u root -p django_practice < django_practice.sql
+
+
