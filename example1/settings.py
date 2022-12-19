@@ -94,7 +94,7 @@ DATABASES = {
         'ENGINE': 'mysql.connector.django',
         'NAME': 'django_practice',
         'USER':'root',
-        'PASSWORD':'OmId57311',
+        'PASSWORD':'',
         'HOST':'localhost',
         'PORT':'3306'
     }
@@ -152,7 +152,7 @@ EMAIL_HOST='smtp.gmail.com'
 EMAIL_USE_TLS=True
 EMAIL_PORT=587
 EMAIL_HOST_USER='omidhosseinitest01@gmail.com'
-# EMAIL_HOST_PASSWORD='OmidkhaN4426!'
+# EMAIL_HOST_PASSWORD=''
 EMAIL_HOST_PASSWORD='mhnckqumlpftjxrr'
 
 
